@@ -1,7 +1,7 @@
 package com.ybigta.trenbien.controller;
 
-import com.ybigta.trenbien.domain.document.PostDoc;
-import com.ybigta.trenbien.service.PostService;
+import com.ybigta.trenbien.domain.document.TestDoc;
+import com.ybigta.trenbien.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -13,23 +13,23 @@ import java.util.List;
 
 
 @Controller
-public class PostController {
+public class TestController {
 
     @Autowired
-    private PostService postService;
+    private TestService testService;
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/list")
-    public List<PostDoc> getAllPost(){
-        List<PostDoc> testDocList = postService.getPostList();
+    @GetMapping("/test/list")
+    public List<TestDoc> getAllPost(){
+        List<TestDoc> testDocList = testService.getTestList();
         return testDocList;
     }
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/list/count")
+    @GetMapping("/test/list/count")
     public long getPostCount(){
-        return postService.getPostCount();
+        return testService.getTestCount();
     }
 }

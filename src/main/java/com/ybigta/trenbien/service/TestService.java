@@ -15,4 +15,8 @@ public class TestService {
     public List<TestDoc> getTestList() {
         return testRepo.findAll();
     }
+
+    public long getTestCount() {
+        return testRepo.count();
+    }
 }
