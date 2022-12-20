@@ -39,6 +39,9 @@ public class PostDoc {
     @Field("HashtagNum")
     private String hashTagNum;
 
+    @Field("image")
+    private String image;
+
     @Field("kakao_review_num")
     private String kakaoReviewNum;
 
@@ -140,4 +143,10 @@ public class PostDoc {
 
     @Field("화장실이 깨끗해요")
     private String toiletIsClean;
+
+    @Field("경도")
+    private String longitude;
+
+    @Field("위도")
+    private String latitude;
 }

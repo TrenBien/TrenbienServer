@@ -22,7 +22,7 @@ public class PostController {
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/")
+    @GetMapping("/Home")
     public List<PostDoc> getAllPost(){
         List<PostDoc> postList = postService.getPostList();
         return postList;
