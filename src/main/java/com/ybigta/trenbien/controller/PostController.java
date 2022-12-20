@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,16 +22,23 @@ public class PostController {
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/list")
+    @GetMapping("/")
     public List<PostDoc> getAllPost(){
-        List<PostDoc> testDocList = postService.getPostList();
-        return testDocList;
+        List<PostDoc> postList = postService.getPostList();
+        return postList;
     }
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/list/count")
-    public long getPostCount(){
-        return postService.getPostCount();
+    @PostMapping("/Near")
+    public List<PostDoc> getNearTrend(){
+        return new ArrayList<>();
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    @GetMapping("/District")
+    public List<PostDoc> getDistrictTrend(){
+        return new ArrayList<>();
     }
 }

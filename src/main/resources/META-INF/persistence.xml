@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="trenbien">
+        <class>com.ybigta.trenbien.domain.entity.Trend</class>
+        <properties>
+            <!-- 필수 속성 -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="dbmasteruser"/>
+            <property name="javax.persistence.jdbc.password" value="trenbiendb"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://ls-b07e0c75f760289f82ed5c7a59cee04cb4f57ab6.cro9qtgqmav5.ap-northeast-2.rds.amazonaws.com/trenbien"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
