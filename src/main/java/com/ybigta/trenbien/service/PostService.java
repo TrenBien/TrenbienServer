@@ -12,11 +12,11 @@ public class PostService {
     @Autowired
     private PostRepo postRepo;
 
-    public List<PostDoc> getPostList() {
+    public List<PostDoc> findAllPost() {
         return postRepo.findAll();
     }
 
-    public long getPostCount() {
+    public long countPost() {
         return postRepo.count();
     }
 }

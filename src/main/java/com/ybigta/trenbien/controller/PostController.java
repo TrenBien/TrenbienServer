@@ -22,22 +22,22 @@ public class PostController {
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/Home")
+    @GetMapping("/post/Home")
     public List<PostDoc> getAllPost(){
-        List<PostDoc> postList = postService.getPostList();
+        List<PostDoc> postList = postService.findAllPost();
         return postList;
     }
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @PostMapping("/Near")
+    @PostMapping("/post/Near")
     public List<PostDoc> getNearTrend(){
         return new ArrayList<>();
     }
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/District")
+    @GetMapping("/post/District")
     public List<PostDoc> getDistrictTrend(){
         return new ArrayList<>();
     }
