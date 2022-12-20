@@ -2,6 +2,7 @@ package com.ybigta.trenbien.analysis;
 
 import com.ybigta.trenbien.domain.document.PostDoc;
 import com.ybigta.trenbien.domain.entity.Trend;
+import com.ybigta.trenbien.service.PostService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,6 +20,8 @@ public class AnalysisTrend {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
 
+        PostService postservice = new PostService();
+        List<PostDoc> postCollection = postservice.findAllPost();
         Trend trend = Trend.builder()
                 .name("name")
                 .category("33")

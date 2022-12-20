@@ -36,7 +36,7 @@ public class Trend {
     private Float longitude;
 
     @Column(name = "score")
-    private int score;
+    private Integer score;
 
     @Column(name = "place_url")
     private String placeUrl;
@@ -45,7 +45,7 @@ public class Trend {
     private String imageUrl;
 
     @Builder
-    public Trend(String name, String category, String tag, String detailedAddress, String district, Float latitude, Float longitude, int score, String placeUrl, String imageUrl){
+    public Trend(String name, String category, String tag, String detailedAddress, String district, Float latitude, Float longitude, Integer score, String placeUrl, String imageUrl){
         this.name = name;
         this.category = category;
         this.tag = tag;

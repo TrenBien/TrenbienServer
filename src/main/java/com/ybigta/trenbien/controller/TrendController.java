@@ -2,8 +2,10 @@ package com.ybigta.trenbien.controller;
 
 import com.ybigta.trenbien.domain.document.PostDoc;
 import com.ybigta.trenbien.domain.entity.Trend;
+import com.ybigta.trenbien.domain.entity.dto.TrendDto;
 import com.ybigta.trenbien.service.TrendService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +22,9 @@ public class TrendController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     @GetMapping("/Home")
-    public List<Trend> get50Trend(){
-        List<Trend> trendList = trendService.findTop50ByOrderByScoreDesc();
-        return trendList;
+    public List<TrendDto> get50Trend(){
+        List<TrendDto> trendTtoList = trendService.findNByOrderByScoreDescDto(PageRequest.of(0,50));
+        return trendTtoList;
     }
 
 }
