@@ -1,11 +1,13 @@
 package com.ybigta.trenbien.analysis;
 
+import com.ybigta.trenbien.domain.document.PostDoc;
 import com.ybigta.trenbien.domain.entity.Trend;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class AnalysisTrend {
 
@@ -27,6 +29,7 @@ public class AnalysisTrend {
                 .longitude(3f)
                 .score(2)
                 .placeUrl("testurl")
+                .imageUrl("imageurl")
                 .build();
 
         em.persist(trend);

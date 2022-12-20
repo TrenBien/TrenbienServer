@@ -20,8 +20,8 @@ public class TrendController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     @GetMapping("/Home")
-    public List<Trend> getAllTrend(){
-        List<Trend> trendList = trendService.findAllTrend();
+    public List<Trend> get50Trend(){
+        List<Trend> trendList = trendService.findTop50ByOrderByScoreDesc();
         return trendList;
     }
 
