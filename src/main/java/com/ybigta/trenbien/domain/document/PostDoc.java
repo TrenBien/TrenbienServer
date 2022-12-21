@@ -24,11 +24,8 @@ public class PostDoc {
     @Field("category")
     private String category;
 
-    @Field("date_diff")
-    private String dateDiff;
-
-    @Field("date_max")
-    private String dateMax;
+    @Field("date_score")
+    private String dateScore;
 
     @Field("detailed_address")
     private String detailedAddress;
@@ -56,6 +53,9 @@ public class PostDoc {
 
     @Field("posts")
     private String posts;
+
+    @Field("trend")
+    private String trend;
 
     @Field("visitor_review")
     private String visitorReview;

@@ -1,7 +1,5 @@
 package com.ybigta.trenbien.controller;
 
-import com.ybigta.trenbien.domain.document.PostDoc;
-import com.ybigta.trenbien.domain.entity.Trend;
 import com.ybigta.trenbien.domain.entity.dto.TrendDto;
 import com.ybigta.trenbien.service.TrendService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +21,23 @@ public class TrendController {
     @ResponseBody
     @GetMapping("/Home")
     public List<TrendDto> get50Trend(){
-        List<TrendDto> trendTtoList = trendService.findNByOrderByScoreDescDto(PageRequest.of(0,50));
-        return trendTtoList;
+        List<TrendDto> trendDtoList = trendService.findNByOrderByScoreDescDto(PageRequest.of(0,50));
+        return trendDtoList;
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    @GetMapping("/Near")
+    public List<TrendDto> get20NearTrend(){
+        List<TrendDto> trendDtoList = trendService.findNByOrderByScoreDescDto(PageRequest.of(0,20));
+        return trendDtoList;
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    @GetMapping("/District")
+    public List<TrendDto> get20DistrictTrend(){
+        List<TrendDto> trendDtoList = trendService.findNByOrderByScoreDescDto(PageRequest.of(0,20));
+        return trendDtoList;
+    }
 }
