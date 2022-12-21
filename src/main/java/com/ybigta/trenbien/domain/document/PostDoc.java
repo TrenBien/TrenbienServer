@@ -85,7 +85,7 @@ public class PostDoc {
     private String storeIsClean;
 
     @Field("부모도 쉬기 좋아요")
-    private String parentsLiketoRest;
+    private String parentsLikeToRest;
 
     @Field("뷰가 좋아요")
     private String viewIsGood;

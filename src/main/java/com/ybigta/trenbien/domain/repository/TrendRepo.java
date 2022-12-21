@@ -14,6 +14,6 @@ import java.util.List;
 public interface TrendRepo extends JpaRepository<Trend, Long> {
     List<Trend> findAll();
     List<Trend> findTop50ByOrderByScoreDesc();
-    @Query("SELECT new com.ybigta.trenbien.domain.entity.dto.TrendDto(t.name, t.category, t.tag, t.detailedAddress, t.placeUrl, t.imageUrl) FROM Trend t ORDER BY t.score DESC")
+    @Query("SELECT new com.ybigta.trenbien.domain.entity.dto.TrendDto(t.name, t.category, t.detailedAddress, t.placeUrl, t.imageUrl,  t.tag1, t.tag2) FROM Trend t ORDER BY t.score DESC")
     List<TrendDto> findNByOrderByScoreDescDto(Pageable pageable);
 }

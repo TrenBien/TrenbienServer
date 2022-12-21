@@ -16,9 +16,6 @@ public class TrendDto {
     @Column(name = "category")
     private String category;
 
-    @Column(name = "tag")
-    private String tag;
-
     @Column(name = "detailed_address")
     private String detailedAddress;
 
@@ -28,13 +25,20 @@ public class TrendDto {
     @Column(name = "image_url")
     private String imageUrl;
 
+    @Column(name = "tag1")
+    private String tag1;
+
+    @Column(name = "tag2")
+    private String tag2;
+
     @Builder
-    public TrendDto(String name, String category, String tag, String detailedAddress, String placeUrl, String imageUrl){
+    public TrendDto(String name, String category, String detailedAddress, String placeUrl, String imageUrl, String tag1, String tag2){
         this.name = name;
         this.category = category;
-        this.tag = tag;
         this.detailedAddress = detailedAddress;
         this.placeUrl = placeUrl;
         this.imageUrl = imageUrl;
+        this.tag1 = tag1;
+        this.tag2 = tag2;
     }
 }
