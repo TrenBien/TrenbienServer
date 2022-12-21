@@ -26,4 +26,8 @@ public class TrendService {
     public List<TrendDto> findNByOrderByScoreDescDto(Pageable pageable){
         return trendRepo.findNByOrderByScoreDescDto(pageable);
     }
+
+    public List<TrendDto> findNWhereDistrictByOrderByScoreDescDto(Pageable pageable, Integer districtNum){
+        return trendRepo.findNWhereDistrictByOrderByScoreDescDto(pageable, districtNum);
+    }
 }
