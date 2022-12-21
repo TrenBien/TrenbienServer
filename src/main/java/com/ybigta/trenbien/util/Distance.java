@@ -1,7 +1,10 @@
 package com.ybigta.trenbien.util;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Distance {
-    public Integer getDistanceFromLatAndLong(Float myLatitude, Float myLongitude, Float trendLatitude, Float trendLongitude){
+    public static Integer getDistanceFromLatAndLong(Float myLatitude, Float myLongitude, Float trendLatitude, Float trendLongitude){
         if (myLatitude == null || myLongitude == null || trendLatitude == null || trendLongitude == null){
             return null;
         }

@@ -9,7 +9,7 @@ import javax.persistence.Column;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class TrendLongLatDto {
+public class TrendLongLatDto implements Comparable<TrendLongLatDto>{
     @Column(name = "name")
     private String name;
 
@@ -38,6 +38,15 @@ public class TrendLongLatDto {
     private Float longitude;
 
     private Integer distance;
+
+    public void setDistance(Integer distance){
+        this.distance = distance;
+    }
+
+    @Override
+    public int compareTo(TrendLongLatDto trendLongLatDto) {
+        return this.distance > trendLongLatDto.distance ? 1 : - 1;
+    }
 
     @Builder
     public TrendLongLatDto(String name, String category, String detailedAddress, String placeUrl, String imageUrl, String tag1, String tag2, Float latitude, Float longitude){

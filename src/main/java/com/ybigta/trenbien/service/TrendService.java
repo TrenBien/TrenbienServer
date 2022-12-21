@@ -16,6 +16,10 @@ public class TrendService {
     @Autowired
     private TrendRepo trendRepo;
 
+    public long getCount(){
+        return trendRepo.count();
+    }
+
     public List<Trend> findAllTrend() {
         return trendRepo.findAll();
     }
