@@ -2,6 +2,7 @@ package com.ybigta.trenbien.service;
 
 import com.ybigta.trenbien.domain.entity.Trend;
 import com.ybigta.trenbien.domain.entity.dto.TrendDto;
+import com.ybigta.trenbien.domain.entity.dto.TrendLongLatDto;
 import com.ybigta.trenbien.domain.repository.TrendRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -29,5 +30,9 @@ public class TrendService {
 
     public List<TrendDto> findNWhereDistrictByOrderByScoreDescDto(Pageable pageable, Integer districtNum){
         return trendRepo.findNWhereDistrictByOrderByScoreDescDto(pageable, districtNum);
+    }
+
+    public List<TrendLongLatDto> findNByOrderByScoreDescLongLatDto(Pageable pageable){
+        return trendRepo.findNByOrderByScoreDescLongLatDto(pageable);
     }
 }
