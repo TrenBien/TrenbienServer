@@ -30,6 +30,9 @@ public class MongodbToMysql {
 
         for (PostDoc post : postCollection){
             //tag1, tag2선출
+            //null처리
+            //image_url이 none2인이유?
+
             String postAddress = post.getAddress();
             String postCategory = post.getCategory();
             String postDetailedAddress = post.getDetailedAddress();

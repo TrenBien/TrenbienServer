@@ -27,6 +27,7 @@ public class TrendController {
         return trendDtoList;
     }
 
+    //near 구현
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     @GetMapping("/Near")
