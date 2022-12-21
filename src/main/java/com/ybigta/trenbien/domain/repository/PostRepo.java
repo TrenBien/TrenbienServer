@@ -10,4 +10,5 @@ public interface PostRepo extends MongoRepository<PostDoc, String> {
     List<PostDoc> findAll();
 
     long count();
+
 }
