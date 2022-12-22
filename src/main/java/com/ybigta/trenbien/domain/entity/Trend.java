@@ -24,6 +24,12 @@ public class Trend {
     @Column(name = "detailed_address")
     private String detailedAddress;
 
+    @Column(name = "grade")
+    private Float grade;
+
+    @Column(name = "kakao_score")
+    private Float kakaoScore;
+
     @Column(name = "district")
     private Integer district;
 
@@ -247,6 +253,8 @@ public class Trend {
     public Trend(String name,
                  String category,
                  String detailedAddress,
+                 Float grade,
+                 Float kakaoScore,
                  Integer district,
                  Float latitude,
                  Float longitude,
@@ -324,6 +332,8 @@ public class Trend {
         this.name = name;
         this.category = category;
         this.detailedAddress = detailedAddress;
+        this.grade = grade;
+        this.kakaoScore = kakaoScore;
         this.district = district;
         this.latitude = latitude;
         this.longitude = longitude;

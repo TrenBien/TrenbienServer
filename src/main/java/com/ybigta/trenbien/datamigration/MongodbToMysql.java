@@ -40,6 +40,8 @@ public class MongodbToMysql {
 
             String postAddress = post.getAddress();
             String postCategory = post.getCategory();
+            String postGrade = post.getGrade();
+            String postKakaoScore = post.getKakaoScore();
             String postDetailedAddress = post.getDetailedAddress();
             String postImage = post.getImage();
             String postPlace = post.getPlace();
@@ -114,6 +116,8 @@ public class MongodbToMysql {
             String postIsPrivate = post.getIsPrivate();
 
             Integer postDistrictInt = DistrictMap.DistrictHashMap.get(postAddress);
+            Float postGradeFloat = Float.parseFloat(postGrade);
+            Float postKakaoScoreFloat = Float.parseFloat(postKakaoScore);
             Float postTrendFloat;
             if (postTrend == null){
                 postTrendFloat = null;
@@ -279,6 +283,8 @@ public class MongodbToMysql {
                     .name(postPlace)
                     .category(postCategory)
                     .detailedAddress(postDetailedAddress)
+                    .grade(postGradeFloat)
+                    .kakaoScore(postKakaoScoreFloat)
                     .district(postDistrictInt)
                     .latitude(postLatitudeFloat)
                     .longitude(postLongitudeFloat)
