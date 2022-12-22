@@ -28,7 +28,7 @@ public class DistrictMap {
         map.put("서울특별시 성북구", 16);
         map.put("서울특별시 송파구", 17);
         map.put("서울특별시 양천구", 18);
-        map.put("서울특별시 영동포구", 19);
+        map.put("서울특별시 영등포구", 19);
         map.put("서울특별시 용산구", 20);
         map.put("서울특별시 은평구", 21);
         map.put("서울특별시 종로구", 22);

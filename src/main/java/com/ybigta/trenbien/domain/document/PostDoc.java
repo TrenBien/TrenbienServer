@@ -66,9 +66,6 @@ public class PostDoc {
     @Field("가성비가 좋아요")
     private String goodValueForMoney;
 
-    @Field("놀거리가 많아요")
-    private String thereAreManyThingsToDo;
-
     @Field("단체모임 하기 좋아요")
     private String goodForGroupMeeting;
 
@@ -123,9 +120,6 @@ public class PostDoc {
     @Field("주차하기 편해요")
     private String goodForParking;
 
-    @Field("추천을 잘해줘요")
-    private String giveGoodRecommendation;
-
     @Field("친절해요")
     private String goodForKindness;
 
@@ -143,6 +137,123 @@ public class PostDoc {
 
     @Field("화장실이 깨끗해요")
     private String toiletIsClean;
+
+    @Field("바비큐 해먹기 좋아요")
+    private String goodForBarbecue;
+
+    @Field("선물하기 좋아요")
+    private String goodForGift;
+
+    @Field("안전하게 관리해요")
+    private String manageSafely;
+
+    @Field("휴게공간이 잘 되어있어요")
+    private String restAreaIsWellEquipped;
+
+    @Field("초보자에게도 적합해요")
+    private String suitableForBeginners;
+
+    @Field("수업 시간이 충분해요")
+    private String enoughClassTime;
+
+    @Field("책 읽기 쾌적해요")
+    private String pleasantForReading;
+
+    @Field("메뉴 구성이 알차요")
+    private String menuStructureIsClear;
+
+    @Field("고기 질이 좋아요")
+    private String meatQualityIsGood;
+
+    @Field("직접 잘 구워줘요")
+    private String bakeWell;
+
+    @Field("테마가 재미있어요")
+    private String themeIsInteresting;
+
+    @Field("아늑해요")
+    private String cozy;
+
+    @Field("건강한 맛이에요")
+    private String healthyTastes;
+
+    @Field("집중하기 좋아요")
+    private String goodForFocus;
+
+    @Field("룸이 잘 되어있어요")
+    private String roomIsGood;
+
+    @Field("컨셉이 독특해요")
+    private String conceptIsUnique;
+
+    @Field("맞춤 수업을 잘해줘요")
+    private String customClassIsGood;
+
+    @Field("포장이 깔끔해요")
+    private String packagingIsClean;
+
+    @Field("현지 맛에 가까워요")
+    private String closeToLocalTaste;
+
+    @Field("음식이 빨리 나와요")
+    private String foodComesFast;
+
+    @Field("좌석이 편해요")
+    private String seatIsComfortable;
+
+    @Field("체험 프로그램이 다양해요")
+    private String experienceProgramsAreVarious;
+
+    @Field("반찬이 잘 나와요")
+    private String sideDishesAreGood;
+
+    @Field("예쁜 소품이 많아요")
+    private String manyPrettyItems;
+
+    @Field("야외 공간이 멋져요")
+    private String outdoorSpaceIsNice;
+
+    @Field("상품이 다양해요")
+    private String productsAreDiverse;
+
+    @Field("조식이 맛있어요")
+    private String breakfastIsDelicious;
+
+    @Field("오래 머무르기 좋아요")
+    private String goodForStayingLong;
+
+    @Field("시설이 깔끔해요")
+    private String facilitiesAreClean;
+
+    @Field("공간이 넓어요")
+    private String spaceIsLarge;
+
+    @Field("체험 프로그램이 많아요")
+    private String manyExperiencePrograms;
+
+    @Field("환기가 잘 돼요")
+    private String ventilationIsGood;
+
+    @Field("품질이 좋아요")
+    private String qualityIsGood;
+
+    @Field("차분한 분위기에요")
+    private String calmMood;
+
+    @Field("조용히 쉬기 좋아요")
+    private String goodForResting;
+
+    @Field("규모가 커요")
+    private String big;
+
+    @Field("관리가 잘 되어있어요")
+    private String wellManaged;
+
+    @Field("특색 있는 제품이 많아요")
+    private String manySpecialProducts;
+
+    @Field("프라이빗해요")
+    private String isPrivate;
 
     @Field("경도")
     private String longitude;

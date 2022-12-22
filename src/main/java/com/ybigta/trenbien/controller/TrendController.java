@@ -40,18 +40,15 @@ public class TrendController {
                 break;
             default:
         }
-
         return trendDtoList;
     }
-    //near 구현
+
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     @PostMapping("/Near")
-    //위도 경도 값 받기
     public List<TrendLongLatDto> get20NearTrend(@RequestBody GpsCoordinate gpsCoordinate){
         long trendCount = trendService.getCount();
-        Integer trendSize = (int) Math.round(trendCount / 4);
-        List<TrendLongLatDto> trendLongLatDtoList = trendService.findNByOrderByScoreDescLongLatDto(PageRequest.of(0,trendSize), gpsCoordinate.getDistrictNum());
+        List<TrendLongLatDto> trendLongLatDtoList = trendService.findNByOrderByScoreDescLongLatDto(PageRequest.of(0,(int) trendCount), gpsCoordinate.getDistrictNum());
         Float myLatitude = gpsCoordinate.getLatitude();
         Float myLongitude = gpsCoordinate.getLongitude();
         PriorityQueue<TrendLongLatDto> priorityQueue = new PriorityQueue<>();
