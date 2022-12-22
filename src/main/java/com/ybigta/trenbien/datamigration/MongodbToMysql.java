@@ -5,6 +5,7 @@ import com.ybigta.trenbien.domain.entity.Trend;
 import com.ybigta.trenbien.service.PostService;
 import com.ybigta.trenbien.util.Pair;
 import com.ybigta.trenbien.valuemapping.DistrictMap;
+import com.ybigta.trenbien.valuemapping.NewTagMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -273,12 +274,8 @@ public class MongodbToMysql {
             pq.add(new Pair(postManySpecialProductsFloat, "특색 있는 제품이 많아요"));
             pq.add(new Pair(postIsPrivateFloat, "프라이빗해요"));
 
-
-
-
-
-            String tagTop1 = pq.poll().getValue();
-            String tagTop2 = pq.poll().getValue();
+            String tagTop1 = NewTagMap.NewTagHashMap.get(pq.poll().getValue());
+            String tagTop2 = NewTagMap.NewTagHashMap.get(pq.poll().getValue());
             Trend trend = Trend.builder()
                     .name(postPlace)
                     .category(postCategory)
