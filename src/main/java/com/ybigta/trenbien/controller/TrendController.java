@@ -101,7 +101,7 @@ public class TrendController {
             }
             Float weight = 1f;
             for (Integer tagNum : tagNumList){
-                switch (tag1Num){
+                switch (tagNum){
                     case 0:
                         recommendataionScore = recommendataionScore + trend.getPriceIsReasonable() * weight;
                         break;
