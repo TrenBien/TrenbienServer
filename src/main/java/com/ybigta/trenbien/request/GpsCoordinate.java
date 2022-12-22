@@ -8,4 +8,5 @@ import lombok.Setter;
 public class GpsCoordinate {
     private Float longitude;
     private Float latitude;
+    private Integer districtNum;
 }

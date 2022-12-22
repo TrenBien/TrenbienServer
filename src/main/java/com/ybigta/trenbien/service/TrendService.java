@@ -6,6 +6,7 @@ import com.ybigta.trenbien.domain.entity.dto.TrendLongLatDto;
 import com.ybigta.trenbien.domain.repository.TrendRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,11 +33,14 @@ public class TrendService {
         return trendRepo.findNByOrderByScoreDescDto(pageable);
     }
 
+    public List<TrendDto> findNWhereCategoryByOrderByScoreDescDto(Pageable pageable, String category){
+        return trendRepo.findNWhereCategoryByOrderByScoreDescDto(pageable, category);
+    }
     public List<TrendDto> findNWhereDistrictByOrderByScoreDescDto(Pageable pageable, Integer districtNum){
         return trendRepo.findNWhereDistrictByOrderByScoreDescDto(pageable, districtNum);
     }
 
-    public List<TrendLongLatDto> findNByOrderByScoreDescLongLatDto(Pageable pageable){
-        return trendRepo.findNByOrderByScoreDescLongLatDto(pageable);
+    public List<TrendLongLatDto> findNByOrderByScoreDescLongLatDto(Pageable pageable, Integer districtNum){
+        return trendRepo.findNByOrderByScoreDescLongLatDto(pageable, districtNum);
     }
 }

@@ -22,12 +22,27 @@ public class TrendController {
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping("/Home")
-    public List<TrendDto> get50Trend(){
-        List<TrendDto> trendDtoList = trendService.findNByOrderByScoreDescDto(PageRequest.of(0,50));
+    @GetMapping("/Home/{num}")
+    public List<TrendDto> get50Trend(@PathVariable Integer num){ //0전체 1 카페 2음식 3놀거리
+        List<TrendDto> trendDtoList = new ArrayList<>();
+        switch (num){
+            case 0:
+                trendDtoList = trendService.findNByOrderByScoreDescDto(PageRequest.of(0,50));
+                break;
+            case 1:
+                trendDtoList = trendService.findNWhereCategoryByOrderByScoreDescDto(PageRequest.of(0,50), "카페");
+                break;
+            case 2:
+                trendDtoList = trendService.findNWhereCategoryByOrderByScoreDescDto(PageRequest.of(0,50), "음식");
+                break;
+            case 3:
+                trendDtoList = trendService.findNWhereCategoryByOrderByScoreDescDto(PageRequest.of(0,50), "놀거리");
+                break;
+            default:
+        }
+
         return trendDtoList;
     }
-
     //near 구현
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -36,7 +51,7 @@ public class TrendController {
     public List<TrendLongLatDto> get20NearTrend(@RequestBody GpsCoordinate gpsCoordinate){
         long trendCount = trendService.getCount();
         Integer trendSize = (int) Math.round(trendCount / 4);
-        List<TrendLongLatDto> trendLongLatDtoList = trendService.findNByOrderByScoreDescLongLatDto(PageRequest.of(0,trendSize));
+        List<TrendLongLatDto> trendLongLatDtoList = trendService.findNByOrderByScoreDescLongLatDto(PageRequest.of(0,trendSize), gpsCoordinate.getDistrictNum());
         Float myLatitude = gpsCoordinate.getLatitude();
         Float myLongitude = gpsCoordinate.getLongitude();
         PriorityQueue<TrendLongLatDto> priorityQueue = new PriorityQueue<>();
