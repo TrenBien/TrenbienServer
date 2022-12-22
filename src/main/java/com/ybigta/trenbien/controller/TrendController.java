@@ -8,6 +8,7 @@ import com.ybigta.trenbien.request.GpsCoordinate;
 import com.ybigta.trenbien.request.Tags;
 import com.ybigta.trenbien.service.TrendService;
 import com.ybigta.trenbien.util.Distance;
+import com.ybigta.trenbien.valuemapping.NewTagReverseMap;
 import com.ybigta.trenbien.valuemapping.TagMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -79,9 +80,9 @@ public class TrendController {
     @ResponseBody
     @PostMapping("/Recommand")
     public List<TrendRecommandScoreDto> get20RecommandTrend(@RequestBody Tags tags){
-        String tag1 = tags.getTag1();
-        String tag2 = tags.getTag2();
-        String tag3 = tags.getTag3();
+        String tag1 = NewTagReverseMap.NewTagReverseHashMap.get(tags.getTag1());
+        String tag2 = NewTagReverseMap.NewTagReverseHashMap.get(tags.getTag2());
+        String tag3 = NewTagReverseMap.NewTagReverseHashMap.get(tags.getTag3());
         Integer tag1Num = TagMap.TagHashMap.get(tag1);
         Integer tag2Num = TagMap.TagHashMap.get(tag2);
         Integer tag3Num = TagMap.TagHashMap.get(tag3);
