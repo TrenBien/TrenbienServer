@@ -3,6 +3,7 @@ package com.ybigta.trenbien.datamigration;
 import com.ybigta.trenbien.domain.document.PostDoc;
 import com.ybigta.trenbien.domain.entity.Trend;
 import com.ybigta.trenbien.service.PostService;
+import com.ybigta.trenbien.util.Pair;
 import com.ybigta.trenbien.valuemapping.DistrictMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import java.util.List;
+import java.util.PriorityQueue;
 
 @Service
 public class MongodbToMysql {
@@ -126,6 +128,38 @@ public class MongodbToMysql {
             Float postGoodForEatingAloneFloat = Float.parseFloat(postGoodForEatingAlone);
             Float postToiletIsCleanFloat = Float.parseFloat(postToiletIsClean);
 
+            PriorityQueue<Pair> pq = new PriorityQueue<>();
+            pq.add(new Pair(postPriceIsReasonableFloat, "가격이 합리적이에요"));
+            pq.add(new Pair(postGoodValueForMoneyFloat, "가성비가 좋아요"));
+            pq.add(new Pair(postThereAreManyThingsToDoFloat, "놀거리가 많아요"));
+            pq.add(new Pair(postGoodForGroupMeetingFloat, "단체모임 하기 좋아요"));
+            pq.add(new Pair(postGoodForTalkingFloat, "대화하기 좋아요"));
+            pq.add(new Pair(postDesertIsGoodFloat, "디저트가 맛있어요"));
+            pq.add(new Pair(postStoreIsSpaciousFloat, "매장이 넓어요"));
+            pq.add(new Pair(postStoreIsCleanFloat, "매장이 청결해요"));
+            pq.add(new Pair(postParentsLikeToRestFloat, "부모도 쉬기 좋아요"));
+            pq.add(new Pair(postViewIsGoodFloat, "뷰가 좋아요"));
+            pq.add(new Pair(postWorthAsMuchAsExpensiveFloat, "비싼 만큼 가치있어요"));
+            pq.add(new Pair(postBreadIsDeliciousFloat, "빵이 맛있어요"));
+            pq.add(new Pair(postGoodForPictureFloat, "사진이 잘 나와요"));
+            pq.add(new Pair(postExplanationIsDetailedFloat, "설명이 자세해요"));
+            pq.add(new Pair(postQuantityIsGoodFloat, "양이 많아요"));
+            pq.add(new Pair(postOneDayClassIsGoodFloat, "원데이 클래스가 알차요"));
+            pq.add(new Pair(postDrinkIsGoodFloat, "음료가 맛있어요"));
+            pq.add(new Pair(postFoodIsGoodFloat, "음식이 맛있어요"));
+            pq.add(new Pair(postInteriorIsGoodFloat, "인테리어가 멋져요"));
+            pq.add(new Pair(postIngredientIsFreshFloat, "재료가 신선해요"));
+            pq.add(new Pair(postGoodForParkingFloat, "주차하기 편해요"));
+            pq.add(new Pair(postGiveGoodRecommendationFloat, "추천을 잘해줘요"));
+            pq.add(new Pair(postGoodForKindnessFloat, "친절해요"));
+            pq.add(new Pair(postCoffeeIsDeliciousFloat, "커피가 맛있어요"));
+            pq.add(new Pair(postGoodForSpecialDayFloat, "특별한 날 가기 좋아요"));
+            pq.add(new Pair(postSpecialMenuExistsFloat, "특별한 메뉴가 있어요"));
+            pq.add(new Pair(postGoodForEatingAloneFloat, "혼밥하기 좋아요"));
+            pq.add(new Pair(postToiletIsCleanFloat, "화장실이 깨끗해요"));
+
+            String tagTop1 = pq.poll().getValue();
+            String tagTop2 = pq.poll().getValue();
             Trend trend = Trend.builder()
                     .name(postPlace)
                     .category(postCategory)
@@ -164,8 +198,8 @@ public class MongodbToMysql {
                     .specialMenuExists(postSpecialMenuExistsFloat)
                     .goodForEatingAlone(postGoodForEatingAloneFloat)
                     .toiletIsClean(postToiletIsCleanFloat)
-                    .tag1("가격이 합리적이에요")
-                    .tag2("가성비가 좋아요")
+                    .tag1(tagTop1)
+                    .tag2(tagTop2)
                     .build();
             em.persist(trend);
         }
