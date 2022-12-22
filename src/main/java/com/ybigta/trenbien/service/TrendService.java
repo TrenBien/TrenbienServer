@@ -29,6 +29,9 @@ public class TrendService {
         return trendRepo.findTop50ByOrderByScoreDesc();
     }
 
+    public List<Trend> findAllWhereCategory(String category){
+        return trendRepo.findAllWhereCategory(category);
+    }
     public List<TrendDto> findNByOrderByScoreDescDto(Pageable pageable){
         return trendRepo.findNByOrderByScoreDescDto(pageable);
     }

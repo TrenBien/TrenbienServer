@@ -83,6 +83,7 @@ public class TrendController {
         String tag1 = NewTagReverseMap.NewTagReverseHashMap.get(tags.getTag1());
         String tag2 = NewTagReverseMap.NewTagReverseHashMap.get(tags.getTag2());
         String tag3 = NewTagReverseMap.NewTagReverseHashMap.get(tags.getTag3());
+        String category = tags.getCategory();
         Integer tag1Num = TagMap.TagHashMap.get(tag1);
         Integer tag2Num = TagMap.TagHashMap.get(tag2);
         Integer tag3Num = TagMap.TagHashMap.get(tag3);
@@ -90,7 +91,7 @@ public class TrendController {
         tagNumList.add(tag1Num);
         tagNumList.add(tag2Num);
         tagNumList.add(tag3Num);
-        List<Trend> trendList = trendService.findAllTrend();
+        List<Trend> trendList = trendService.findAllWhereCategory(category);
         PriorityQueue<TrendRecommandScoreDto> priorityQueue = new PriorityQueue<>();
         for (Trend trend : trendList){
             double recommendataionScore = 0;

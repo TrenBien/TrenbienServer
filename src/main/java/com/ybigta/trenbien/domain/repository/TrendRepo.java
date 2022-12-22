@@ -17,6 +17,9 @@ public interface TrendRepo extends JpaRepository<Trend, Long> {
 
     List<Trend> findAll();
 
+    @Query("SELECT t FROM Trend t WHERE t.category = :category")
+    List<Trend> findAllWhereCategory(@Param("category") String category);
+
     List<Trend> findTop50ByOrderByScoreDesc();
 
     @Query("SELECT new com.ybigta.trenbien.domain.entity.dto.TrendDto(t.name, t.category, t.detailedAddress, t.placeUrl, t.imageUrl,  t.tag1, t.tag2) FROM Trend t ORDER BY t.score DESC")
