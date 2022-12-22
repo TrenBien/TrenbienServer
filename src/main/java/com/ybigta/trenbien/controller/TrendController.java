@@ -33,7 +33,7 @@ public class TrendController {
                 trendDtoList = trendService.findNWhereCategoryByOrderByScoreDescDto(PageRequest.of(0,50), "카페");
                 break;
             case 2:
-                trendDtoList = trendService.findNWhereCategoryByOrderByScoreDescDto(PageRequest.of(0,50), "음식");
+                trendDtoList = trendService.findNWhereCategoryByOrderByScoreDescDto(PageRequest.of(0,50), "음식점");
                 break;
             case 3:
                 trendDtoList = trendService.findNWhereCategoryByOrderByScoreDescDto(PageRequest.of(0,50), "놀거리");
